@@ -1,0 +1,33 @@
+.header {
+    /* Set the height of the header */
+    height: 150px;
+
+    /* Add a background image to the header */
+    background-image: url('/Assets/harry_potter_hogwarts_banner_by_uprisen257_d3jcvxa.png');
+
+    /* Center and scale the background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Add some padding and center the text */
+    padding: 50px;
+    text-align: center;
+
+    /* Set the color and size of the text */
+    color: white;
+    font-size: 30px; 
+}
+
+.collapsible {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
