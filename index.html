@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Wizarding World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Harry Potter Students</title>
 </head>
 <body>
-
-<!-- Add HTML for the header -->
-<div class="header">
-    <h1></h1>
-</div>
-
-<!-- This is the div where the fetched data will be appended -->
-<div id="houseList"></div>
-
-<script src="index.js"></script>
+    <header>
+        <h1>Harry Potter Students</h1>
+        <div id="buttons">
+            <button id="students">Students</button>
+            <button id="houses">Houses</button>
+        </div>
+    </header>
+    <main>
+        <div id="content" class="grid-container"></div>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>

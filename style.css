@@ -1,33 +1,83 @@
-.header {
-    /* Set the height of the header */
-    height: 150px;
+/* styles.css */
 
-    /* Add a background image to the header */
-    background-image: url('/Assets/harry_potter_hogwarts_banner_by_uprisen257_d3jcvxa.png');
+/* Add this CSS to your stylesheet */
 
-    /* Center and scale the background image */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    /* Add some padding and center the text */
-    padding: 50px;
-    text-align: center;
-
-    /* Set the color and size of the text */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  header {
+    background-color: #333;
     color: white;
-    font-size: 30px; 
-}
-
-.collapsible {
-    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  #buttons {
+    margin-top: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #555;
+    color: white;
     border: none;
-    outline: none;
-    background-color: transparent;
-    font-size: 18px;
-}
-.content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  button:hover {
+    background-color: #777;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+ 
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Spread items evenly in the row */
+  }
+  
+  .student {
+    width: calc(30% - 10px); /* Adjust the width as needed and consider margins */
+    margin-bottom: 20px;
+  }
+
+  .student h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .student p {
+    margin: 5px 0;
+  }
+  
+  /* Add this style for image containers */
+  .student-image-container {
+    height: 200px; /* Set a fixed height for image containers */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add this style for student images */
+  .student img {
+    max-height: 100%;
+    max-width: 100%;
+  }

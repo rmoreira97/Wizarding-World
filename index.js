@@ -1,85 +1,138 @@
-// Define the API URL
-const apiUrl = "https://wizard-world-api.herokuapp.com/Houses";
+// Function to fetch data from an API and populate the content for Harry Potter students
+function fetchStudentsAndPopulateContent() {
+  const contentDiv = document.getElementById("content");
+  contentDiv.innerHTML = "Loading...";
 
-// Function to fetch data from the API and append it to the page
-function fetchDataAndAppend() {
-  // Fetch data from the API
-  fetch(apiUrl)
-    .then((response) => {
-      // Check if the response is ok (i.e., status code is in the 200-299 range)
+  fetch("https://hp-api.onrender.com/api/characters/students")
+    .then(response => {
       if (!response.ok) {
-        // If the response is not ok, throw an error
-        throw new Error(`Network response was not ok (${response.status})`);
+        throw new Error(`Network response was not ok: ${response.status}`);
       }
-      // If the response is ok, parse the JSON data
       return response.json();
     })
-    .then((data) => {
-      // Access and process the data as needed
-      const houses = data; // Assuming the response contains an array of houses
-
-      // Log the fetched data to the console (for debugging purposes)
-      console.log(houses);
-
-      // Get the HTML element where you want to append the data
-      const elementToAppend = document.getElementById("houseList"); // Replace with the actual ID
-
-      // Create a navigation bar element
-      const navBar = document.createElement("nav");
-      navBar.style.display = "flex";
-      navBar.style.justifyContent = "space-between";
-      elementToAppend.appendChild(navBar);
-
-      // Iterate through the houses and create HTML elements for each
-      houses.forEach((house) => {
-        // Define variables for house properties that might be undefined
-        const headOfHouse = house.heads
-          ? house.heads[0].firstName + " " + house.heads[0].lastName
-          : "No head of house found";
-        const school = house.commonRoom ? house.commonRoom : "No school found";
-        const mascot = house.element ? house.element : "No mascot found";
-
-        // Create a new div element for the house
-        const houseElement = document.createElement("div");
-        houseElement.innerHTML = `
-          <h2 class="house-name">${house.name}</h2>
-          <div class="house-details" style="display: none;">
-            <p>House Founder: ${house.founder}</p>
-            <p>House Animal: ${house.animal}</p>
-            <p>House Ghost: ${house.ghost}</p>
-            <p>House Colors: ${house.houseColours}</p>
-            <p>House Head of House: ${headOfHouse}</p>
-            <p>House School: ${school}</p>
-            <p>House Values: ${house.traits
-              .map((trait) => trait.name)
-              .join(", ")}</p>
-            <p>House Mascot: ${mascot}</p>
-          </div>
+    .then(data => {
+      contentDiv.innerHTML = ""; // Clear the loading message
+      // Loop through the student data and create elements for each student
+      data.forEach(student => {
+        const studentDiv = document.createElement("div");
+        studentDiv.className = "student";
+        const studentDetailsDiv = document.createElement("div"); // Container for student details
+        studentDetailsDiv.style.display = "none"; // Initially hide details
+        studentDiv.innerHTML = `
+            <h2>${student.name || 'Name not available'}</h2>
         `;
 
-        // Append the house element to the navigation bar
-        navBar.appendChild(houseElement);
-      });
+        // Create an image container and set the CSS class
+        const imageContainer = document.createElement("div");
+        imageContainer.className = "student-image-container";
 
-      // Add click event listeners to the house names
-      document.querySelectorAll(".house-name").forEach((element) => {
-        element.addEventListener("click", (event) => {
-          // Get the details element for the clicked house name
-          const detailsElement = event.target.nextElementSibling;
-          // Toggle the display property of the details element
-          if (detailsElement.style.display === "none") {
-            detailsElement.style.display = "block";
+        // Create the image element and set the src attribute
+        const studentImage = document.createElement("img");
+        studentImage.src = student.image || 'path_to_default_image.jpg'; // Use a default image for missing URLs
+        studentImage.alt = "Student Image";
+
+        // Append the image to the image container
+        imageContainer.appendChild(studentImage);
+
+        // Append the image container to the student div
+        studentDiv.appendChild(imageContainer);
+
+        // Add click event to show/hide details
+        studentDiv.addEventListener("click", () => {
+          if (studentDetailsDiv.style.display === "none") {
+            studentDetailsDiv.style.display = "block"; // Show details
           } else {
-            detailsElement.style.display = "none";
+            studentDetailsDiv.style.display = "none"; // Hide details
           }
         });
+
+        // Append student details container to student div
+        studentDiv.appendChild(studentDetailsDiv);
+
+        contentDiv.appendChild(studentDiv);
+
+        // Create student details
+        const studentDetails = document.createElement("div");
+        studentDetails.className = "student-details";
+        studentDetails.innerHTML = `
+            <p>House: ${student.house || 'House not available'}</p>
+            <p>Patronus: ${student.patronus || 'Patronus not available'}</p>
+            <p>Species: ${student.species || 'Species not available'}</p>
+            <p>Gender: ${student.gender || 'Gender not available'}</p>
+            <p>Date of Birth: ${student.dateOfBirth || 'Date of Birth not available'}</p>
+            <p>Wizard: ${student.wizard ? 'Yes' : 'No'}</p>
+            <p>Ancestry: ${student.ancestry || 'Ancestry not available'}</p>
+            <p>Eye Colour: ${student.eyeColour || 'Eye Colour not available'}</p>
+            <p>Hair Colour: ${student.hairColour || 'Hair Colour not available'}</p>
+            <p>Wand:</p>
+            <ul>
+              <li>Wood: ${student.wand.wood || 'Wood not available'}</li>
+              <li>Core: ${student.wand.core || 'Core not available'}</li>
+              <li>Length: ${student.wand.length || 'Length not available'}</li>
+            </ul>
+        `;
+
+        // Append student details to the details container
+        studentDetailsDiv.appendChild(studentDetails);
       });
     })
-    .catch((error) => {
-      // Log any errors that occur during the fetch operation to the console
-      console.error("There was a problem with the fetch operation:", error);
+    .catch(error => {
+      console.error("Error fetching student data:", error);
+      contentDiv.innerHTML = "Failed to fetch student data.";
     });
 }
 
-// Call the function to fetch data from the API and append it to the page
-fetchDataAndAppend();
+// Function to fetch data from an API and populate the content for Harry Potter houses
+function fetchHousesAndPopulateContent() {
+  const contentDiv = document.getElementById("content");
+  contentDiv.innerHTML = "Loading...";
+
+  fetch("https://wizard-world-api.herokuapp.com/houses")
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
+      })
+      .then(data => {
+          contentDiv.innerHTML = ""; // Clear the loading message
+
+          // Loop through the house data and create elements for each house
+          data.forEach(house => {
+              const houseDiv = document.createElement("div");
+              houseDiv.className = "house";
+              houseDiv.innerHTML = `
+                  <h2>${house.name || 'Name not available'}</h2>
+                  <p>House Colours: ${house.houseColours || 'House Colours not available'}</p>
+                  <p>Founder: ${house.founder || 'Founder not available'}</p>
+                  <p>Animal: ${house.animal || 'Animal not available'}</p>
+                  <p>Element: ${house.element || 'Element not available'}</p>
+                  <p>Ghost: ${house.ghost || 'Ghost not available'}</p>
+                  <p>Common Room: ${house.commonRoom || 'Common Room not available'}</p>
+                  <p>Head of House: ${house.heads.map(head => `${head.firstName} ${head.lastName}`).join(', ') || 'Head of House not available'}</p>
+                  <p>Traits: ${house.traits.map(trait => trait.name).join(', ') || 'Traits not available'}</p>
+              `;
+
+              contentDiv.appendChild(houseDiv);
+          });
+      })
+      .catch(error => {
+          console.error("Error fetching house data:", error);
+          contentDiv.innerHTML = "Failed to fetch house data.";
+      });
+}
+
+// Event listener for fetching and displaying Harry Potter students
+document.getElementById("students").addEventListener("click", () => {
+  fetchStudentsAndPopulateContent();
+});
+
+// Event listener for fetching and displaying Harry Potter houses
+document.getElementById("houses").addEventListener("click", () => {
+  fetchHousesAndPopulateContent();
+});
+
+// Initial content population (populate with Harry Potter students data by default)
+fetchStudentsAndPopulateContent();
+
+
