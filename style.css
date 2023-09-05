@@ -1,83 +1,62 @@
-/* styles.css */
-
-/* Add this CSS to your stylesheet */
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  #buttons {
-    margin-top: 10px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    font-size: 16px;
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  button:hover {
-    background-color: #777;
-  }
-  
-  main {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
- 
-  .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Spread items evenly in the row */
-  }
-  
-  .student {
-    width: calc(30% - 10px); /* Adjust the width as needed and consider margins */
-    margin-bottom: 20px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
 
-  .student h2 {
-    font-size: 20px;
-    margin: 0;
-  }
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+#sImage {
+  width: 200px;
+  height: 250px;
+  display: center;
+  border: 10px solid white;
+}
+
+#student-details {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  font-size: large;
+  text-align: center;
+}
+
+#student-pic {
+  width: 300px;
+  height: 400px;
+  display: center;
+}
+
+#new-form {
+  text-align: center;
+}
+
+#imgTwo {
+  width: 200px;
+  height: 250px;
+  display: center;
+  border: 10px solid white;
+}
+
+
+iframe {
+  display: block;
+  margin: 0 auto; /* This centers the iframe horizontally */
+  width: 500px; /* Adjust the width as needed */
+  height: 500px; /* Adjust the height as needed */
+  /* lower it on the page */
+  position: relative;
+  top: 100px;
   
-  .student p {
-    margin: 5px 0;
-  }
-  
-  /* Add this style for image containers */
-  .student-image-container {
-    height: 200px; /* Set a fixed height for image containers */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Add this style for student images */
-  .student img {
-    max-height: 100%;
-    max-width: 100%;
-  }
+}
