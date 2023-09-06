@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+     
     <title>Wizarding World</title>
 </head>
 <body>
     <header>
-        <h1>Wizarding World</h1>
+        
     </header>
     <main>
+        <!-- <div> add a title for the student section </div> --> 
+        <h1> Click on a Student to learn more</h1>
         <div id="student-gallery"></div>
     </main>
     
@@ -22,7 +25,10 @@
       <p id= "student-house"></p>
       <p id= "student-dateofbirth"></p>
     </div>
-
+     
+    <!-- Chat bot   -->
+    
+    
     <form id="new-form">
       <h4>Add Yourself</h4>
       <label for="name">Name</label>
@@ -40,10 +46,15 @@
       <label for="image-input">Image URL of Yourself:</label>
       <input type="text" name="image-input" id="image-input">
 
-      <input type="submit" value="Add Me">
+      <input type="submit" value="Join Hogwarts">
 
     </form>
     <iframe id="wheel-iframe" src="https://wheeldecide.com/e.php?c1=Gryffindor&c2=Slytherin+&c3=Ravenclaw&c4=Hufflepuff&col=rybg&t=Which+house+do+you+belong+to%3F&time=7" width="500" height="500" scrolling="no" frameborder="0"></iframe>
-
+    <iframe id = "chat-bot" src="https://chatthing.ai/bots/406ad52a-1e16-4861-89c7-950d17a6dc6c/embed" width="100%" height="600" frameborder="0" allow="clipboard-write"></iframe>
+    <!-- embed font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet"> 
+    <script defer src="index.js"></script> 
   </body>
   </html>

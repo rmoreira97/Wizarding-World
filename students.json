@@ -1,13 +1,11 @@
-
 {
-
-        "students": [
-    {
+    "students": [
+      {
         "id": "9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8",
         "name": "Harry Potter",
         "alternate_names": [
-            "The Boy Who Lived",
-            "The Chosen One"
+          "The Boy Who Lived",
+          "The Chosen One"
         ],
         "species": "human",
         "gender": "male",
@@ -18,14 +16,14 @@
         "eyeColour": "green",
         "hairColour": "black",
         "wand": {
-            "wood": "holly",
-            "core": "phoenix feather",
-            "length": 11
+          "wood": "holly",
+          "core": "phoenix feather",
+          "length": 11
         },
         "patronus": "stag",
         "image": "https://ik.imagekit.io/hpapi/harry.jpg"
-    },
-    {
+      },
+      {
         "id": "4c7e6819-a91a-45b2-a454-f931e4a7cce3",
         "name": "Hermione Granger",
         "alternate_names": [],
@@ -38,18 +36,18 @@
         "eyeColour": "brown",
         "hairColour": "brown",
         "wand": {
-            "wood": "vine",
-            "core": "dragon heartstring",
-            "length": 10.75
+          "wood": "vine",
+          "core": "dragon heartstring",
+          "length": 10.75
         },
         "patronus": "otter",
         "image": "https://ik.imagekit.io/hpapi/hermione.jpeg"
-    },
-    {
+      },
+      {
         "id": "c3b1f9a5-b87b-48bf-b00d-95b093ea6390",
         "name": "Ron Weasley",
         "alternate_names": [
-            "Dragomir Despard"
+          "Dragomir Despard"
         ],
         "species": "human",
         "gender": "male",
@@ -60,14 +58,14 @@
         "eyeColour": "blue",
         "hairColour": "red",
         "wand": {
-            "wood": "willow",
-            "core": "unicorn tail-hair",
-            "length": 14
+          "wood": "willow",
+          "core": "unicorn tail-hair",
+          "length": 14
         },
         "patronus": "Jack Russell terrier",
         "image": "https://ik.imagekit.io/hpapi/ron.jpg"
-    },
-    {
+      },
+      {
         "id": "af95bd8a-dfae-45bb-bc69-533860d34129",
         "name": "Draco Malfoy",
         "alternate_names": [],
@@ -80,14 +78,14 @@
         "eyeColour": "grey",
         "hairColour": "blonde",
         "wand": {
-            "wood": "hawthorn",
-            "core": "unicorn tail-hair",
-            "length": 10
+          "wood": "hawthorn",
+          "core": "unicorn tail-hair",
+          "length": 10
         },
         "patronus": "",
         "image": "https://ik.imagekit.io/hpapi/draco.jpg"
-    },
-    {
+      },
+      {
         "id": "d5c4daa3-c726-426a-aa98-fb40f3fba816",
         "name": "Cedric Diggory",
         "alternate_names": [],
@@ -100,14 +98,14 @@
         "eyeColour": "grey",
         "hairColour": "brown",
         "wand": {
-            "wood": "ash",
-            "core": "unicorn hair",
-            "length": 12.25
+          "wood": "ash",
+          "core": "unicorn hair",
+          "length": 12.25
         },
         "patronus": "",
         "image": "https://ik.imagekit.io/hpapi/cedric.png"
-    },
-    {
+      },
+      {
         "id": "8f9aa40b-5d7c-441e-ad32-4564ecda3b70",
         "name": "Cho Chang",
         "alternate_names": [],
@@ -120,14 +118,14 @@
         "eyeColour": "brown",
         "hairColour": "black",
         "wand": {
-            "wood": "",
-            "core": "",
-            "length": null
+          "wood": "",
+          "core": "",
+          "length": null
         },
         "patronus": "swan",
         "image": "https://ik.imagekit.io/hpapi/cho.jpg"
-    },
-    {
+      },
+      {
         "id": "3db6dc51-b461-4fa4-a6e4-b1ff352221c5",
         "name": "Neville Longbottom",
         "alternate_names": [],
@@ -140,14 +138,14 @@
         "eyeColour": "",
         "hairColour": "blonde",
         "wand": {
-            "wood": "cherry",
-            "core": "unicorn tail-hair",
-            "length": 13
+          "wood": "cherry",
+          "core": "unicorn tail-hair",
+          "length": 13
         },
         "patronus": "Non-Corporeal",
         "image": "https://ik.imagekit.io/hpapi/neville.jpg"
-    },
-    {
+      },
+      {
         "id": "861c4cde-2f0f-4796-8d8f-9492e74b2573",
         "name": "Luna Lovegood",
         "alternate_names": [],
@@ -160,14 +158,14 @@
         "eyeColour": "grey",
         "hairColour": "blonde",
         "wand": {
-            "wood": "",
-            "core": "",
-            "length": null
+          "wood": "",
+          "core": "",
+          "length": null
         },
         "patronus": "hare",
         "image": "https://ik.imagekit.io/hpapi/luna.jpg"
-    },
-    {
+      },
+      {
         "id": "1cd6dc64-01a9-4379-9cfd-1a7167ba1bb1",
         "name": "Ginny Weasley",
         "alternate_names": [],
@@ -180,14 +178,40 @@
         "eyeColour": "brown",
         "hairColour": "red",
         "wand": {
-            "wood": "yew",
-            "core": "",
-            "length": null
+          "wood": "yew",
+          "core": "",
+          "length": null
         },
         "patronus": "horse",
         "image": "https://ik.imagekit.io/hpapi/ginny.jpg"
-    }
-]
-
-}
+      },
+      {
+        "id": "04f9eb45-d843-4e29-a7d3-0bd49ed87f85",
+        "name": "Vincent Crabbe",
+        "alternate_names": [],
+        "species": "human",
+        "gender": "male",
+        "house": "Slytherin",
+        "dateOfBirth": null,
+        "yearOfBirth": null,
+        "wizard": true,
+        "ancestry": "pure-blood",
+        "eyeColour": "black",
+        "hairColour": "black",
+        "wand": {
+          "wood": "",
+          "core": "",
+          "length": null
+        },
+        "patronus": "",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Jamie Waylett",
+        "alternate_actors": [],
+        "alive": false,
+        "image": "https://ik.imagekit.io/hpapi/crabbe.jpg"
+      }
+    ]
+  }
+  
 
