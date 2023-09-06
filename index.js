@@ -14,7 +14,7 @@ const newImage = document.querySelector("#image-input");
 const wheelIframe = document.getElementById("wheel-iframe");
 const houseInput = document.getElementById("house");
 
-
+// function for confetti animation and colors
 const jsConfetti = new JSConfetti();
 
 function triggerConfetti() {
@@ -22,6 +22,10 @@ function triggerConfetti() {
     confettiColors: getConfettiColors(newHouse.value), // Get the confetti colors based on the house
   });
 }
+
+// Function to get the confetti colors based on the house
+// uses a switch statement to determine the house and 
+// returns the colors for that house
 
 function getConfettiColors(house) {
   switch (house.toLowerCase()) {
@@ -45,7 +49,9 @@ function getConfettiColors(house) {
 
 
 
-// Fetch data and set up event listeners here...
+// Fetch data  and display using forEach and event listener
+// appends it to galleryDiv 
+
 fetch("http://localhost:3000/students")
   .then((res) => res.json())
   .then((data) => {
@@ -62,6 +68,7 @@ fetch("http://localhost:3000/students")
     addStudents(data[0]);
   });
   
+  // function to add students to the DOM 
   function addStudents(student) {
     studentImage.src = student.image;
     studentName.textContent = student.name;
@@ -70,6 +77,13 @@ fetch("http://localhost:3000/students")
     studentDateOfBirth.textContent = student.dateOfBirth;
   }
   
+
+// Event listener for the Wheel Decide iframe
+// listens for a message from the iframe and 
+// extracts the selected value from the message 
+// and displays it in the "house" input field
+
+
 
 window.addEventListener("message", (event) => {
   // Check if the message is from the Wheel Decide iframe
@@ -81,17 +95,23 @@ window.addEventListener("message", (event) => {
     console.log("Extracted value:", selectedValue);
     // capitalize 
     function capitalizeWords(str) {
-      return str.replace(/\b\w/g, (char) => char.toUpperCase());
-    }
+  return str.replace(/\b\w/g, (char) => char.toUpperCase());
+}
     // Set the selected value in the "house" input field
     houseInput.value = capitalizeWords(selectedValue);
   }
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
 
-  if (
+
+// Event listener for the form submit
+
+
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // prevent default behavior aka reload
+
+  if (  // prevent user from leaving form blank
     newName.value.trim() === "" ||
     newGender.value.trim() === "" ||
     newHouse.value.trim() === "" ||
@@ -102,8 +122,10 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  const house = newHouse.value; // Get the selected house from the form
 
+  // Create a new image element, student info and click event to submit new student
+
+  const house = newHouse.value;  
   const imgTwo = document.createElement("img");
   imgTwo.src = newImage.value;
   imgTwo.id = "sImage";
@@ -112,6 +134,7 @@ form.addEventListener("submit", (e) => {
     addStudents(newStudent);
   });
 
+  // Create a new student object with the form data
   const newStudent = {
     name: newName.value,
     gender: newGender.value,
@@ -120,7 +143,7 @@ form.addEventListener("submit", (e) => {
     image: newImage.value,
   };
 
-  // Trigger the confetti animation with the selected house color
+  //  references the Trigger the confetti  funcction and fills it with the selected house color
   triggerConfetti(house);
 
   // Clear the form
