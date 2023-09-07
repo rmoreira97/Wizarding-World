@@ -1,5 +1,5 @@
 {
-    "students": [
+    "characters": [
       {
         "id": "9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8",
         "name": "Harry Potter",
@@ -184,33 +184,8 @@
         },
         "patronus": "horse",
         "image": "https://ik.imagekit.io/hpapi/ginny.jpg"
-      },
-      {
-        "id": "04f9eb45-d843-4e29-a7d3-0bd49ed87f85",
-        "name": "Vincent Crabbe",
-        "alternate_names": [],
-        "species": "human",
-        "gender": "male",
-        "house": "Slytherin",
-        "dateOfBirth": null,
-        "yearOfBirth": null,
-        "wizard": true,
-        "ancestry": "pure-blood",
-        "eyeColour": "black",
-        "hairColour": "black",
-        "wand": {
-          "wood": "",
-          "core": "",
-          "length": null
-        },
-        "patronus": "",
-        "hogwartsStudent": true,
-        "hogwartsStaff": false,
-        "actor": "Jamie Waylett",
-        "alternate_actors": [],
-        "alive": false,
-        "image": "https://ik.imagekit.io/hpapi/crabbe.jpg"
       }
+      
     ]
   }
   

@@ -1,57 +1,105 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #111827
+  background-color: #111827;
+  font-family: 'Germania One', cursive;
 }
+
+#banner-img {
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 
 header {
-  background-color: none;
+  background-color: #333;
   color: white;
-  padding: 20px;
   text-align: center;
-  background-image: url("Assets/harry_potter_hogwarts_banner_by_uprisen257_d3jcvxa.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 100px;
+  background-color: #111827;
 }
 
- h1 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: bold;
-  color: rgb(252, 94, 178); ;
+#welcome {
+  color: white;
+  font-size: 30px;
   text-align: center;
-  padding-top: 20px;
+  line-height: 0px;
   font-family: 'Germania One', cursive; 
+  -webkit-text-stroke: .1px #070707;
+}
+
+#click {
+  text-align: center;
+  color: rgb(252, 94, 178); ;
+  font-family: 'Franklin Gothic Medium';
+  font-size: 14px;
+  font-weight: bold;
   -webkit-text-stroke: .1px black;
+  margin: 0;
+}
+
+#main {
+  padding: 30px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
 #sImage {
-  width: 200px;
-  height: 250px;
+  width: 100px;
+  height: 150px;
+  margin-right: 3.5%;
   display: center;
   border: 1px solid white;
-  margin: 10px;
+  background-size: cover;
+  border-radius: 5px;
+  
 }
+
+#sImage:hover {
+border-color: gold;
+}
+
+#imgTwo {
+width: 100px;
+  height: 150px;
+  margin-right: 3.5%;
+  display: center;
+  border: 1px solid white;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+#imgTwo:hover {
+border-color: gold;
+}
+
 
 #student-details {
   padding: 20px;
-  border: 1px solid #852570;
+  border: 1px solid #ccc;
   margin-top: 20px;
-  font-size: large;
+  font-size: medium;
+  font-weight: bold;
   text-align: center;
+  color: white;
   font-family: 'Germania One', cursive;
-  color:rgb(252, 94, 178);
-  text-shadow: 1px 1px 1px #070707;
 }
 
 #student-pic {
   width: 300px;
   height: 400px;
   display: center;
-  border: white 1px solid;
+  background-size:contain;
+  border: 1px solid white;
+}
+
+#student-pic:hover {
+  border-color: red;
 }
 
 h4 { 
@@ -65,17 +113,18 @@ h4 {
   text-shadow: 1px 1px 1px #070707;
 }
 
-#new-form input[type="submit"] {
-  font-family: 'Germania One', cursive; 
-  color: rgb(252, 94, 178);
-  display: block; 
-  background-color: black;
-  border: 1px solid #852570;
-  position: relative; 
-  margin: 0 auto;
-  margin-top: 10px;
-
-} 
+#join {
+  margin-top: 5px;
+  width: 150px;
+  height: 30px;
+  background-color: red;
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: gold;
+  color: white;
+  font-family: 'Germania One', cursive;
+  font-size: 15px;
+}
 
 #new-form input[type="text"] {
   font-family: 'Germania One', cursive;    background-color: #070707;
